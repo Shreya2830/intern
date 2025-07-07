@@ -26,10 +26,14 @@ class ProfileController extends Controller
      */
  
 public function profileUpdate(ProfileUpdateRequest $request): RedirectResponse
+public function profileUpdate(ProfileUpdateRequest $request): RedirectResponse
 {
         // dd('Update method hit ho raha hai!');
 
+        // dd('Update method hit ho raha hai!');
+
     $user = $request->user();
+
 
     $data = $request->validated();
     $image = $data['image'] ?? null;
@@ -47,6 +51,7 @@ public function profileUpdate(ProfileUpdateRequest $request): RedirectResponse
         $user->email_verified_at = null;
     }
 
+    $user->save();
     $user->save();
 
     return Redirect::route('profile.edit')->with('status', 'profile-updated');
