@@ -15,6 +15,8 @@ class ProfileUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+            // dd('Rules hit ho rahi hain!');
+
         return [
             'name' => ['required', 'string', 'max:255'],
             'username' => [ 'required','string','max:255', Rule::unique(User::class)->ignore($this->user()->id), ],

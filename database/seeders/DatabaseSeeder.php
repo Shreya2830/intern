@@ -21,18 +21,24 @@ class DatabaseSeeder extends Seeder
             'username' => 'testuser',
             'email' => 'test@example.com'
         ]);
-        $categories = [
-            'hair spa',
-            'makeups',
-            'skin care',
-            'botoxs',
-            'plastic surgery',
-            'facial',
-            'nails',
-            'massage',
-            'eyebrows',
-            'eyelashes treatement',
-        ];
+       $categories = [
+    'lifestyle',
+    'travel',
+    'fitness',
+    'fashion',
+    'food',
+    'technology',
+    'memes',
+    'photography',
+    'motivational',
+    'personal blog',
+    'entertainment',
+    'news & updates',
+    'quotes',
+    'DIY & crafts',
+    'education',
+];
+
             foreach ($categories as $category) {
                 Category::create(['name' => $category]);
         
